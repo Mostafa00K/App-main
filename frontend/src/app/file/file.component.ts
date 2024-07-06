@@ -44,12 +44,20 @@ export class FileComponent {
     salaire_base: 0
   };
 
-  
+  post_oj:any;
   ngOnInit() {
     this.id_emp=this.route.snapshot.params['id']; 
     this.id_post=this.route.snapshot.params['id2']; 
     this.employee.id_employee=this.id_emp;
     this.employee.id_post=this.id_post;
+    this.service.getPoST(this.id_post).subscribe(data => {
+      this.post_oj = data;
+      console.log(this.post_oj);
+      this.post.nom_post=this.post_oj.nom_post;
+      this.post.salaire_base=this.post_oj.salaire_base;
+      this.post.prime_variable=this.post_oj.prime_variable;
+       // This will log the data after it is received
+    });
     
   }
   // getPost(): void {

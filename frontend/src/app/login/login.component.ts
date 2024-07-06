@@ -41,7 +41,7 @@ export class LoginComponent {
     const { username, password } = this.loginForm.value;
     if (username === 'admin' && password === 'myHRSpace') {
       localStorage.setItem('user', 'admin'); // Store user info in localStorage
-      this.router.navigate(['/home']); // Redirect to home page
+      this.router.navigate(['/employees']); // Redirect to home page
       this.loginFailed = false;
     } else {
       this.loginFailed = true;
