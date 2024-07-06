@@ -23,5 +23,17 @@ db.File.belongsTo(db.Employee, { foreignKey: 'id_employee' });
 
 db.Post.hasMany(db.File, { foreignKey: 'id_post' });
 db.File.belongsTo(db.Post, { foreignKey: 'id_post' });
+// db.Employee.hasMany(db.Extra, { foreignKey: 'id_employee' });
+// Sync models with database
+const syncDatabase = async () => {
+  try {
+    await sequelize.sync({ force: false }); // Set to true to drop and recreate tables on each sync
+    console.log('Database synchronized successfully.');
+  } catch (error) {
+    console.error('Error synchronizing database:', error);
+  }
+};
+
+syncDatabase();
 
 module.exports = db;

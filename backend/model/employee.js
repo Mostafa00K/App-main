@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     const Employee = sequelize.define('Employee', {
     id_employee: {
         type: DataTypes.INTEGER,
-        autoIncrement: false,
+        autoIncrement: true,
         primaryKey: true,
       },
     nom_complet: {
@@ -46,4 +46,5 @@ module.exports = (sequelize, DataTypes) => {
   
     return Employee;
   };
+  
   
