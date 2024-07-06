@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { LoginComponent } from './login/login.component';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import { CommonModule } from '@angular/common';
     MatButtonModule,
     MatMenuModule,
     RouterOutlet,
-    CommonModule
+    CommonModule,
+    LoginComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
